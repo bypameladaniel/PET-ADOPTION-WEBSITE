@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOG CARE</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ultra&display=swap" rel="stylesheet">
+<script src ="/js/javascript.js"></script>
+    
+</head>
+<body class="cutive-mono-regular ">
+    <%- include('header.ejs') %>
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/">HOME PAGE</a></li>
+           
+            <li><a href="/find-dog-cat">FIND A DOG/CAT</a></li>
+            <li><a class="active" href="/dog-care">DOG CARE</a></li>
+            <li><a href="/cat-care">CAT CARE</a></li>
+            <li><a href="/have-pet-giveaway">HAVE A PET TO GIVE AWAY</a></li>
+            <li><a href="/contact-us">CONTACT US</a></li>
+            <% if (!session.loggedin) { %>
+                <li><a href="/create-account">LOG IN</a></li>
+            <% } else { %>
+                <li><a href="/logout">LOG OUT</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    
+    <main class="content-area">
+        <section id="dog-care">
+            <h2>DOG CARE TIPS</h2>
+            <p>
+                Caring for your new arrival over the coming days will be a full time job. Moving home is extremely stressful for your cat or dog. His entire life will be turned upside down and he'll naturally turn to you for comfort and support! 
+            </p>
+            <ol>
+                <li>
+                    <p> <span>Regular Exercise</span> : Dogs need regular exercise to stay healthy and happy. Daily walks, playtime, and interactive games are essential for their physical and mental well-being.</p>
+                </li>
+                <li>
+                    <span>Nutritious Diet</span>: Feed your dog a balanced and nutritious diet appropriate for their age, size, and breed. Consult with your veterinarian to determine the best food options and feeding schedule.
+                </li>
+                <li><span>Grooming</span> : Regular grooming, including brushing their coat, trimming their nails, and cleaning their ears, is essential for your dog's hygiene and overall health.
+                </li>
+                <li><span>Training and Socialization</span>
+                    : Proper training and socialization are crucial for a well-behaved and well-adjusted dog. Enroll your dog in obedience classes and expose them to different people, animals, and environments from a young age.
+                </li>
+                <li><span>Regular Veterinary Care</span>
+                    : Schedule regular check-ups with your veterinarian to ensure your dog is up-to-date on vaccinations, preventatives, and overall health assessments. Early detection and treatment of health issues can improve outcomes and prolong your dog's life.
+                </li>
+            </ol>
+        </section>
+        <p>Credits to <a href="https://chat.openai.com">ChatGPT</a> for all the text found in the content area</p>
+
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+</html>

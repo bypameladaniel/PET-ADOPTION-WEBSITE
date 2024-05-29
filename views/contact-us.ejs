@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ultra&display=swap" rel="stylesheet">
+<script src ="/js/javascript.js"></script>
+    
+</head>
+<body class="cutive-mono-regular ">
+    <%- include('header.ejs') %>
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/">HOME PAGE</a></li>
+            
+            <li><a href="/find-dog-cat">FIND A DOG/CAT</a></li>
+            <li><a href="/dog-care">DOG CARE</a></li>
+            <li><a href="/cat-care">CAT CARE</a></li>
+            <li><a href="/have-pet-giveaway">HAVE A PET TO GIVE AWAY</a></li>
+            <li><a class="active" href="/contact-us">CONTACT US</a></li>
+            <% if (!session.loggedin) { %>
+                <li><a href="/create-account">LOG IN</a></li>
+            <% } else { %>
+                <li><a href="/logout">LOG OUT</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    
+    <main class="content-area">
+        <section id="contact-us">
+            <h2>CONTACT US</h2>
+            <p> Pamela Daniel <br> 40286602 <br> pamelaelidaniel@gmail.com <br> <br> </p>
+        </section>
+    </main>
+    <%- include('footer.ejs') %>
+    
+</body>
+</html>

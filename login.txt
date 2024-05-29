@@ -1,0 +1,10 @@
+pamela:pamela1234
+pam:pam1234
+Raphael:password1234
+elizabeth:12345password
+user1:1234password
+randomusername:pasword1234
+randomusername2:password1234
+newuser:passwordssoda1234
+jennie:jennie1234
+beyonce:beyonce12344

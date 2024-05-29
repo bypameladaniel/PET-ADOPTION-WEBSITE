@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAW CITY</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ultra&display=swap" rel="stylesheet">
+    <script src ="/js/javascript.js" defer></script>
+        
+</head>
+<body class="cutive-mono-regular ">
+
+    <%- include('header.ejs') %>
+    <nav class="side-menu">
+        <ul>
+            <li><a class="active" href="/">HOME PAGE</a></li>
+            
+            <li><a href="/find-dog-cat">FIND A DOG/CAT</a></li>
+            <li><a href="/dog-care">DOG CARE</a></li>
+            <li><a href="/cat-care">CAT CARE</a></li>
+            <li><a href="/have-pet-giveaway">HAVE A PET TO GIVE AWAY</a></li>
+            <li><a href="/contact-us">CONTACT US</a></li>
+            <% if (!session.loggedin) { %>
+                <li><a href="/create-account">LOG IN</a></li>
+            <% } else { %>
+                <li><a href="/logout">LOG OUT</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    
+    <main class="content-area">
+        <section id="home-page">
+            <img src="/images/dogpic.png" alt="Dog pic could not load" width="960" >
+            <h2>WELCOME TO PAW CITY!</h2>
+            <p>
+                Are you looking for a dog or a cat to adopt? <br><br>
+                At PAW CITY, we're dedicated to helping you find the perfect companion for your home. Whether you're looking to adopt a loyal dog or a playful cat, our mission is to match you with a furry friend that fits your lifestyle and preferences.
+                With a wide range of available pets and expert care advice, PawCity is your go-to destination for pet adoption and support. Our team is passionate about connecting loving families with adorable pets in need of a forever home.
+                Explore our website to browse available pets, learn about responsible pet care, and find valuable resources for pet owners. Join us in making a difference in the lives of animals and experience the joy of pet adoption with PawCity. <br><br>
+                
+                Welcome to the PawCity family!
+            </p>
+            <p>Credits goes to <a href="https://chat.openai.com">ChatGPT</a> for all the text found in the content area</p>
+            <p>All picture credits goes to <a href="https://www.pinterest.ca">Pinterest</a></p>
+        </section>
+        
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+</html>

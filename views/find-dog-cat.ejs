@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIND A DOR OR A CAT</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ultra&display=swap" rel="stylesheet">
+<script src ="/js/javascript.js"></script>
+    
+</head>
+<body class="cutive-mono-regular ">
+    <%- include('header.ejs') %>
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/">HOME PAGE</a></li>
+            
+            <li><a class="active" href="/find-dog-cat">FIND A DOG/CAT</a></li>
+            <li><a href="/dog-care">DOG CARE</a></li>
+            <li><a href="/cat-care">CAT CARE</a></li>
+            <li><a href="/have-pet-giveaway">HAVE A PET TO GIVE AWAY</a></li>
+            <li><a href="/contact-us">CONTACT US</a></li>
+            <% if (!session.loggedin) { %>
+                <li><a href="/create-account">LOG IN</a></li>
+            <% } else { %>
+                <li><a href="/logout">LOG OUT</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    
+    <main class="content-area">
+        <section id="find-dog-cat">
+            <h2>FIND A DOG</h2><br>
+            <form action="/find-dog-cat" method="POST" onsubmit="return validateFormDog()">
+                <input type="hidden" name="animal" value="dog">
+                <fieldset>
+                    <legend>Find a dog</legend>
+                    Preferred breed of the dog 
+                    <select name="breed" id="breed-dog">
+                        <option value="boxer">Boxer</option>
+                        <option value="bulldog">Bulldog</option>
+                        <option value="beagle">Beagle</option>
+                        <option value="poodle">Poodle</option>
+                        <option value="doberman">Doberman</option>
+                        <option value="chihuahua">Chihuahua</option>
+                        <option value="nomatter">Doesn't Matter</option>
+                    </select>
+                    <br>
+                    Preferred age of the dog
+                    <select name="age" id="age-dog">
+                        <option value="upto8">Up to 8 months</option>
+                        <option value="between8and10-12yo">8 months to 10-12 years old</option>
+                        <option value="10-12yoto15-16yo">10-12 years old to 15-16 years old</option>
+                        <option value="16andover">16 years old and over</option>
+                        <option value="nomatter">Doesn't matter</option>
+                    </select>
+                    <br>
+                    Preferrend gender: 
+                    <input type="radio" name="gender" id="female-dog" value="female">
+                    Female
+                    <input type="radio" name="gender" id="male-dog" value="male">
+                    Male
+                    <input type="radio" name="gender" id="nomatter-dog" value="nomatter">
+                    Doesn't matter
+                    <br>
+                    Which individuals would you like the dog to get along with?
+                    <input type="checkbox" id="children-dog" name="children" value="children">
+                    <label for="children-dog">Children</label>
+                    <input type="checkbox" id="other-dogs-dog" name="dogs" value="dogs">
+                    <label for="other-dogs-dog">Other dogs</label>
+                    <input type="checkbox" id="cats-dog" name="cats" value="cats">
+                    <label for="cats-dog">Cats</label>
+                </fieldset>
+                <br>
+                <p>Thank you for your time!</p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+            
+            <h2>FIND A CAT</h2> <br>
+            <form action="/find-dog-cat" method="POST" onsubmit="return validateFormCat()">
+                <input type="hidden" name="animal" value="cat">
+                <fieldset>
+                    <legend>Find a cat</legend>
+                    Preferred breed of the cat 
+                    <select name="breed" id="breed-cat">
+                        <option value="persian">Persian</option>
+                        <option value="burmese">Burmese</option>
+                        <option value="sphynx">Sphynx</option>
+                        <option value="birman">Birman</option>
+                        <option value="bombay">Bombay</option>
+                        <option value="calico">Calico</option>
+                        <option value="nomatter">Doesn't Matter</option>
+                    </select>
+                    <br>
+                    Preferred age of the cat
+                    <select name="age" id="age-cat">
+                        <option value="upto8">Up to 8 months</option>
+                        <option value="between8and10-12yo">8 months to 10-12 years old</option>
+                        <option value="10-12yoto15-16yo">10-12 years old to 15-16 years old</option>
+                        <option value="16andover">16 years old and over</option>
+                        <option value="nomatter">Doesn't matter</option>
+                    </select>
+                    <br>
+                    Preferred gender: 
+                    <input type="radio" name="gender" id="female-cat" value="female">
+                    Female
+                    <input type="radio" name="gender" id="male-cat" value="male">
+                    Male
+                    <input type="radio" name="gender" id="nomatter-cat" value="nomatter">
+                    Doesn't matter
+                    <br>
+                    Which individuals would you like the cat to get along with?
+                    <input type="checkbox" id="children-cat" name="children" value="children">
+                    <label for="children-cat">Children</label>
+                    <input type="checkbox" id="dogs-cat" name="dogs" value="dogs">
+                    <label for="dogs-cat">Dogs</label>
+                    <input type="checkbox" id="other-cats-cat" name="cats" value="cats">
+                    <label for="other-cats-cat">Other cats</label>
+                </fieldset>
+                <br>
+                <p>Thank you for your time!</p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+            
+            </section>
+        </main>
+     <%- include('footer.ejs') %>
+</body>
+</html>        
